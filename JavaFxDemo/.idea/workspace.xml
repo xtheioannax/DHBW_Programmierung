@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4acfab50-fa5c-48ed-8fd6-04a4ab0e32ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/games/swing/tictactoe/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/games/swing/tictactoe/TicTacToe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/games/swing/tictactoe/UIConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/games/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/games/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/games/t10/gui/tictactoe/application.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +87,7 @@
       <recent name="swing.tictactoe" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.t10.gui.tictactoe.TicTacToe">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swing.tictactoe.Main" />
       <module name="JavaFXDemo" />
@@ -142,9 +136,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.t10.gui.tictactoe.TicTacToe" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.swing.tictactoe.TicTacToe" />
-        <item itemvalue="Application.t10.gui.tictactoe.TicTacToe" />
         <item itemvalue="Application.TicTacToe" />
       </list>
     </recent_temporary>
@@ -167,7 +161,7 @@
       <workItem from="1747587267589" duration="3317000" />
       <workItem from="1747590750782" duration="6702000" />
       <workItem from="1747597518430" duration="188000" />
-      <workItem from="1747597717313" duration="5686000" />
+      <workItem from="1747597717313" duration="6378000" />
     </task>
     <servers />
   </component>
