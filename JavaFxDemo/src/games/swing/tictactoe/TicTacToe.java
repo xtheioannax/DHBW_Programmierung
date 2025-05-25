@@ -29,7 +29,7 @@ public class TicTacToe implements ActionListener {
         }
 
         frame.add(panel, BorderLayout.CENTER);
-        frame.setSize(400, 400);
+        frame.setSize(BOARD_WIDTH, BOARD_HEIGHT);
         frame.setVisible(true);
     }
 
@@ -40,40 +40,53 @@ public class TicTacToe implements ActionListener {
         } else {
             button.setText(PLAYER_O);
         }
-        button.setEnabled(false);
+        button.setEnabled(false); // Disable used buttons
         xTurn = !xTurn;
 
         checkForWinner();
     }
 
+    private void winningDialog(String winner) {
+        JOptionPane.showMessageDialog(frame, winner + " wins!");
+        resetGame();
+    }
+
     public void checkForWinner() {
         // Check rows
         for (int i = 0; i < 9; i += 3) {
-            if (buttons[i].getText().equals(buttons[i+1].getText()) && buttons[i].getText().equals(buttons[i+2].getText()) && !buttons[i].isEnabled()) {
-                JOptionPane.showMessageDialog(frame, buttons[i].getText() + " wins!");
-                resetGame();
+            if (    buttons[i].getText().equals(buttons[i+1].getText()) &&
+                    buttons[i].getText().equals(buttons[i+2].getText()) &&
+                    !buttons[i].isEnabled())
+            {
+                winningDialog(buttons[i].getText());
                 return;
             }
         }
 
         // Check columns
         for (int i = 0; i < 3; i++) {
-            if (buttons[i].getText().equals(buttons[i+3].getText()) && buttons[i].getText().equals(buttons[i+6].getText()) && !buttons[i].isEnabled()) {
-                JOptionPane.showMessageDialog(frame, buttons[i].getText() + " wins!");
-                resetGame();
+            if (    buttons[i].getText().equals(buttons[i+3].getText()) &&
+                    buttons[i].getText().equals(buttons[i+6].getText()) &&
+                    !buttons[i].isEnabled())
+            {
+                winningDialog(buttons[i].getText());
                 return;
             }
         }
 
         // Check diagonals
-        if (buttons[0].getText().equals(buttons[4].getText()) && buttons[0].getText().equals(buttons[8].getText()) && !buttons[0].isEnabled()) {
-            JOptionPane.showMessageDialog(frame, buttons[0].getText() + " wins!");
-            resetGame();
+        if (    buttons[0].getText().equals(buttons[4].getText()) &&
+                buttons[0].getText().equals(buttons[8].getText()) &&
+                !buttons[0].isEnabled())
+        {
+            winningDialog(buttons[0].getText());
             return;
         }
-        if (buttons[2].getText().equals(buttons[4].getText()) && buttons[2].getText().equals(buttons[6].getText()) && !buttons[2].isEnabled()) {
-            JOptionPane.showMessageDialog(frame, buttons[2].getText() + " wins!");
-            resetGame();
+        if (    buttons[2].getText().equals(buttons[4].getText()) &&
+                buttons[2].getText().equals(buttons[6].getText()) &&
+                !buttons[2].isEnabled())
+        {
+            winningDialog(buttons[2].getText());
             return;
         }
 
@@ -98,4 +111,6 @@ public class TicTacToe implements ActionListener {
         }
         xTurn = true;
     }
+
+
 }

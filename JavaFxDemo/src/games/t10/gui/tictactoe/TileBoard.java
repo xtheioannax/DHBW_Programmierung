@@ -75,49 +75,6 @@ public class TileBoard {
         return pane;
     }
 
-    private class Tile {
-        private StackPane pane;
-        private Label label;
-        public Tile() {
-            pane = new StackPane();
-            pane.setMinSize(100, 100);
-
-            Rectangle border = new Rectangle();
-            border.setHeight(100);
-            border.setWidth(100);
-            border.setFill(Color.TRANSPARENT);
-            border.setStroke(Color.BLACK);
-            pane.getChildren().add(border);
-
-            label = new Label(" ");
-            label.setAlignment(Pos.CENTER);
-            label.setFont(Font.font(24));
-            pane.getChildren().add(label);
-
-            pane.setOnMouseClicked(event -> {
-                if(label.getText().isEmpty() && !gameOver){
-                    label.setText(getPlayerTurn());
-                    changePlayerTurn();
-                    checkForWinner();
-                }
-            });
-        }
-
-        public StackPane getStackPane() {
-            return pane;
-        }
-
-        public String getLabelValue() {
-            return label.getText();
-        }
-
-        public void setLabelValue(String value) {
-            label.setText(value);
-        }
-
-
-    }
-
     private void checkForWinner() {
         checkRowsForWinner();
         checkColumnsForWinner();
@@ -205,6 +162,47 @@ public class TileBoard {
         winningLine.setTranslateY(winningTiles.middle.getStackPane().getTranslateY());
 
         winningLine.setVisible(true);
+    }
+
+    private class Tile {
+        private StackPane pane;
+        private Label label;
+        public Tile() {
+            pane = new StackPane();
+            pane.setMinSize(100, 100);
+
+            Rectangle border = new Rectangle();
+            border.setHeight(100);
+            border.setWidth(100);
+            border.setFill(Color.TRANSPARENT);
+            border.setStroke(Color.BLACK);
+            pane.getChildren().add(border);
+
+            label = new Label(" ");
+            label.setAlignment(Pos.CENTER);
+            label.setFont(Font.font(24));
+            pane.getChildren().add(label);
+
+            pane.setOnMouseClicked(event -> {
+                if(label.getText().isEmpty() && !gameOver){
+                    label.setText(getPlayerTurn());
+                    changePlayerTurn();
+                    checkForWinner();
+                }
+            });
+        }
+
+        public StackPane getStackPane() {
+            return pane;
+        }
+
+        public String getLabelValue() {
+            return label.getText();
+        }
+
+        public void setLabelValue(String value) {
+            label.setText(value);
+        }
     }
 
     private class WinningTiles {
